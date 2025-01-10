@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Lab1Test2Exc6 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите три числа для проверки тройной суммы: ");
+        int x = getInput(scanner, "Введите первое число: ");
+        int y = getInput(scanner, "Введите второе число: ");
+        int z = getInput(scanner, "Введите третье число: ");
+        System.out.println("Результат тройной суммы: " + sum3(x, y, z));
+    }
+
+    public static boolean sum3(int x, int y, int z) {
+        return (x + y == z) || (x + z == y) || (y + z == x);
+    }
+
+    private static int getInput(Scanner scanner, String message) {
+        System.out.println(message);
+        while (!scanner.hasNextInt()) {
+            System.out.println("Ошибка ввода! Введите целое число:");
+            scanner.next();
+        }
+        return scanner.nextInt();
+    }
+}
