@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Lab1Test1Exc8 {
+
+    public boolean isDivisor(int a, int b) {
+        if (a == 0 || b == 0) {
+            return false;
+        }
+        return (a % b == 0) || (b % a == 0);
+    }
+
+    public static void main(String[] args) {
+        Lab1Test1Exc8 checker = new Lab1Test1Exc8();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите первое число (a):");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Пожалуйста, введите целое число!");
+            scanner.next();
+        }
+        int a = scanner.nextInt();
+
+        System.out.println("Введите второе число (b):");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Пожалуйста, введите целое число!");
+            scanner.next();
+        }
+        int b = scanner.nextInt();
+
+        boolean result = checker.isDivisor(a, b);
+        System.out.println("Результат: " + result);
+
+        scanner.close();
+    }
+}
