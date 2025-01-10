@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Lab1Test1Exc7 {
+
+    public boolean isInRange(int a, int b, int num) {
+        int lowerBound = Math.min(a, b);
+        int upperBound = Math.max(a, b);
+        return num >= lowerBound && num <= upperBound;
+    }
+
+    public static void main(String[] args) {
+        Lab1Test1Exc7 checker = new Lab1Test1Exc7();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите левую границу диапазона a:");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Пожалуйста, введите целое число!");
+            scanner.next();
+        }
+        int a = scanner.nextInt();
+
+        System.out.println("Введите правую границу диапазона b:");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Пожалуйста, введите целое число!");
+            scanner.next();
+        }
+        int b = scanner.nextInt();
+
+        System.out.println("Введите число для проверки num:");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Пожалуйста, введите целое число!");
+            scanner.next();
+        }
+        int num = scanner.nextInt();
+
+        boolean result = checker.isInRange(a, b, num);
+        System.out.println("Результат: " + result);
+
+        scanner.close();
+    }
+}
