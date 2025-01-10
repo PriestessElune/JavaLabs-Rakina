@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Lab1Test2Exc7 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите два числа для двойной суммы: ");
+        int x = getInput(scanner, "Введите первое число: ");
+        int y = getInput(scanner, "Введите второе число: ");
+        System.out.println("Результат двойной суммы: " + sum2(x, y));
+    }
+
+    public static int sum2(int x, int y) {
+        int sum = x + y;
+        if (sum >= 10 && sum <= 19) {
+            return 20;
+        }
+        return sum;
+    }
+
+    private static int getInput(Scanner scanner, String message) {
+        System.out.println(message);
+        while (!scanner.hasNextInt()) {
+            System.out.println("Ошибка ввода! Введите целое число:");
+            scanner.next();
+        }
+        return scanner.nextInt();
+    }
+}
