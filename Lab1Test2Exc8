@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Lab1Test2Exc8 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите возраст: ");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Ошибка ввода! Введите целое число:");
+            scanner.next();
+        }
+
+        int age = scanner.nextInt();
+        System.out.println(age(age));
+    }
+
+    public static String age(int x) {
+        if (x < 0) {
+            return "Возраст не может быть отрицательным!";
+        }
+
+        int lastDigit = x % 10;
+        int lastTwoDigits = x % 100;
+
+        if (lastTwoDigits >= 11 && lastTwoDigits <= 14) {
+            return x + " лет";
+        }
+
+        switch (lastDigit) {
+            case 1:
+                return x + " год";
+            case 2:
+            case 3:
+            case 4:
+                return x + " года";
+            default:
+                return x + " лет";
+        }
+    }
+}
