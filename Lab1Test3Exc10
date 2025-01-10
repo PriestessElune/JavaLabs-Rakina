@@ -1,0 +1,42 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Lab1Test3Exc10 {
+
+    public static void main(String[] args) {
+        guessGame();
+    }
+
+    public static void guessGame() {
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+
+        int target = random.nextInt(10);
+        int attempts = 0;
+        int guess;
+
+        System.out.println("Игра \"Угадайка\"! Введите число от 0 до 9:");
+
+        while (true) {
+            guess = getInput(scanner, "Введите ваше число: ");
+            attempts++;
+
+            if (guess == target) {
+                System.out.println("Вы угадали!");
+                System.out.println("Вы отгадали число за " + attempts + " попыток.");
+                break;
+            } else {
+                System.out.println("Вы не угадали, попробуйте снова.");
+            }
+        }
+    }
+
+    private static int getInput(Scanner scanner, String message) {
+        System.out.println(message);
+        while (!scanner.hasNextInt()) {
+            System.out.println("Ошибка ввода! Введите целое число:");
+            scanner.next();
+        }
+        return scanner.nextInt();
+    }
+}
