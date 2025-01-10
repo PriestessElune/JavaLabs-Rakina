@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Lab1Test1Exc6 {
+
+    public boolean isUpperCase(char x) {
+        return x >= 'A' && x <= 'Z';
+    }
+
+    public static void main(String[] args) {
+        Lab1Test1Exc6 checker = new Lab1Test1Exc6();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите символ для проверки:");
+        String input = scanner.next();
+
+        while (input.length() != 1) {
+            System.out.println("Пожалуйста, введите только один символ!");
+            input = scanner.next();
+        }
+
+        char x = input.charAt(0);
+        boolean result = checker.isUpperCase(x);
+        System.out.println("Результат: " + result);
+
+        scanner.close();
+    }
+}
