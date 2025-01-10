@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Lab1Test1Exc10 {
+
+    public int lastNumSum(int a, int b) {
+        int digitA = a % 10;
+        int digitB = b % 10;
+        return (digitA + digitB) % 10;
+    }
+
+    public void performSequentialAddition() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите 5 чисел для последовательного сложения:");
+
+        int result = 0;
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Введите число " + (i + 1) + ": ");
+
+            while (!scanner.hasNextInt()) {
+                System.out.println("Ошибка ввода. Введите целое число.");
+                scanner.next();
+            }
+
+            int input = scanner.nextInt();
+
+            if (i == 0) {
+                result = input;
+            } else {
+                result = lastNumSum(result, input);
+            }
+        }
+
+        System.out.println("Итоговый результат: " + result);
+    }
+
+    public static void main(String[] args) {
+        Lab1Test1Exc10 addition = new Lab1Test1Exc10();
+        addition.performSequentialAddition();
+    }
+}
