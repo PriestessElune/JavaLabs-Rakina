@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Lab1Test2Exc9 {
+
+    public String day(int x) {
+        switch (x) {
+            case 1:
+                return "понедельник";
+            case 2:
+                return "вторник";
+            case 3:
+                return "среда";
+            case 4:
+                return "четверг";
+            case 5:
+                return "пятница";
+            case 6:
+                return "суббота";
+            case 7:
+                return "воскресенье";
+            default:
+                return "это не день недели";
+        }
+    }
+
+    public static void main(String[] args) {
+        Lab1Test2Exc9 printer = new Lab1Test2Exc9();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите число, обозначающее день недели 1-7:");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Пожалуйста, введите целое число от 1 до 7!");
+            scanner.next();
+        }
+        int input = scanner.nextInt();
+
+        String result = printer.day(input);
+        System.out.println("Результат: " + result);
+
+        scanner.close();
+    }
+}
