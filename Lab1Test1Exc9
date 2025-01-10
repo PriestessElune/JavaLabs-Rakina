@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Lab1Test1Exc19 {
+public class Lab1Test1Exc9 {
 
     public boolean isEqual(int a, int b, int c) {
         return a == b && b == c;
@@ -22,7 +22,7 @@ public class Lab1Test1Exc19 {
     }
 
     public static void main(String[] args) {
-        Lab1Test1Exc19 checker = new Lab1Test1Exc19();
+        Lab1Test1Exc9 checker = new Lab1Test1Exc9();
         Scanner scanner = new Scanner(System.in);
 
         int a = checker.safeInput(scanner, "Введите первое число a: ");
